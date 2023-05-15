@@ -3,89 +3,55 @@ const team = [
     {
         "nome": "Wayne Barnett",
         "ruolo": "Founder & CEO",
-        "foto": "img/wayne-barnett-founder-ceo.jpg",
+        "foto": "wayne-barnett-founder-ceo.jpg",
     },
     {
         "nome": "Angela Caroll",
         "ruolo": "Chief Editor",
-        "foto": "img/angela-caroll-chief-editor.jpg",
+        "foto": "angela-caroll-chief-editor.jpg",
     },
     {
         "nome": "Walter Gordon",
         "ruolo": "Office Manager",
-        "foto": "img/walter-gordon-office-manager.jpg",
+        "foto": "walter-gordon-office-manager.jpg",
     },
     {
         "nome": "Angela Lopez",
         "ruolo": "Social Media Manager",
-        "foto": "img/angela-lopez-social-media-manager.jpg",
+        "foto": "angela-lopez-social-media-manager.jpg",
     },
     {
         "nome": "Scott Estrada",
         "ruolo": "Developer",
-        "foto": "img/scott-estrada-developer.jpg",
+        "foto": "scott-estrada-developer.jpg",
     },
     {
         "nome": "Barbara Ramos",
         "ruolo": "Graphic Designer",
-        "foto": "img/barbara-ramos-graphic-designer.jpg",
+        "foto": "barbara-ramos-graphic-designer.jpg",
     }
 ];
 
-// Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+// Stampare su console e poi su schermo, per ogni membro del team, le informazioni di nome, ruolo e la foto
+
+const container = document.querySelector('.row');
+console.log(container);
+
 for(let i = 0; i < team.length; i++){
     let objIesimo = team[i];
     console.log(objIesimo);
 
-    for(let chiaveObj in objIesimo){
-        console.log(objIesimo[chiaveObj]);
+    const nome = objIesimo.nome;
+    const ruolo = objIesimo.ruolo;
+    const foto = objIesimo.foto;
 
-        // if(i === 0){
-        //     document.querySelector(".nome1").innerHTML = objIesimo[chiaveObj];
-        //     i++
-        // }else if(i === 1){
-        //     document.querySelector(".ruolo1").innerHTML = objIesimo[chiaveObj];
-        //     i++
-        // }else if(i === 2){
+    const cardElement = ` <div class="col-4">
+                            <h2>${nome}</h2>
+                            <h4>${ruolo}</h4>
+                            <img src="img/${foto}" alt="">
+                        </div>`
 
-        //     var url = objIesimo[chiaveObj];
- 
-        //     var image = new Image();
-        //     image.src = url;
-        //     document.querySelector('.foto1').appendChild(image);
-        //     i++
-        // }else if(i === 5){
-        //     document.querySelector(".nome2").innerHTML = objIesimo[chiaveObj];
-        //     i++
-        // }else if(i === 6){
-        //     document.querySelector(".ruolo2").innerHTML = objIesimo[chiaveObj];
-        //     i++
-        // }else if(i === 7){
-
-        //     var url = objIesimo[chiaveObj];
- 
-        //     var image = new Image();
-        //     image.src = url;
-        //     document.querySelector('.foto2').appendChild(image);
-        //     i++
-        // }else if(i === 0){
-        //     document.querySelector(".nome3").innerHTML = objIesimo[chiaveObj];
-        //     i++
-        // }else if(i === 1){
-        //     document.querySelector(".ruolo3").innerHTML = objIesimo[chiaveObj];
-        //     i++
-        // }else if(i === 2){
-
-        //     var url = objIesimo[chiaveObj];
- 
-        //     var image = new Image();
-        //     image.src = url;
-        //     document.querySelector('.foto3').appendChild(image);
-        //     i++
-        // }
-    }
-
-    
+    container.innerHTML += cardElement;
 }
 
 
